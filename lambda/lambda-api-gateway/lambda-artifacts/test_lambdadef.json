@@ -1,0 +1,14 @@
+{
+  "FunctionName": "MyLambdaFunction",
+  "Role": "{{ lambda_exec_role_arn }}",
+  "Handler": "test_lambda_function.lambda_handler",
+  "Runtime": "python3.8",
+  "Code": {
+    "ZipFile": "lambda/lambda-api-gateway/lambda-artifacts/blue_function.zip"
+  },
+  "Description": "This is a test Lambda function.",
+  "Timeout": 15,
+  "MemorySize": 128,
+  "Publish": true,
+  "PackageType": "Zip"
+}
