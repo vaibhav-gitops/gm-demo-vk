@@ -2,11 +2,16 @@
   "api_id": {
     "sensitive": false,
     "type": "string",
-    "value": "zzn3iqgwhc"
+    "value": "pxi9vl82wc"
+  },
+  "lambda_exec_role_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:iam::593793058131:role/TestLambdaExecutionRole"
   },
   "test_route_id": {
     "sensitive": false,
     "type": "string",
-    "value": "ivjhlc4"
+    "value": "gw5yoy0"
   }
 }
