@@ -119,7 +119,7 @@ output "api_id" {
   value = aws_apigatewayv2_api.api.id
 }
 
-output "test_route_id" {
+output "route_id" {
   value = aws_apigatewayv2_route.test_route.id
 }
 

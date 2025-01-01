@@ -9,6 +9,11 @@
     "type": "string",
     "value": "arn:aws:iam::593793058131:role/TestLambdaExecutionRole"
   },
+  "route_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ynivcf7"
+  },
   "s3_bucket_name": {
     "sensitive": false,
     "type": "string",
@@ -23,10 +28,5 @@
     "sensitive": false,
     "type": "string",
     "value": "green_function.zip"
-  },
-  "test_route_id": {
-    "sensitive": false,
-    "type": "string",
-    "value": "ynivcf7"
   }
 }
