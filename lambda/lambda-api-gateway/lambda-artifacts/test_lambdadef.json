@@ -5,7 +5,7 @@
   "Runtime": "python3.8",
   "Code": {
     "S3Bucket": "{{ s3_bucket_name }}",
-    "S3Key": "{{ s3_object_blue_key }}"
+    "S3Key": "{{ s3_object_green_key }}"
   },
   "Description": "This is a test Lambda function.",
   "Timeout": 15,
