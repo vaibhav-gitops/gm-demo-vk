@@ -9,6 +9,21 @@
     "type": "string",
     "value": "arn:aws:iam::593793058131:role/TestLambdaExecutionRole"
   },
+  "s3_bucket_name": {
+    "sensitive": false,
+    "type": "string",
+    "value": "lambda-function-deployment-bucket-025351c2"
+  },
+  "s3_object_blue_key": {
+    "sensitive": false,
+    "type": "string",
+    "value": "blue_function.zip"
+  },
+  "s3_object_green_key": {
+    "sensitive": false,
+    "type": "string",
+    "value": "green_function.zip"
+  },
   "test_route_id": {
     "sensitive": false,
     "type": "string",
