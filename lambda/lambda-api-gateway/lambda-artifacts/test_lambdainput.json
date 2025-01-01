@@ -1,17 +1,9 @@
 {
-  "api_id": {
-    "sensitive": false,
-    "type": "string",
-    "value": "pxi9vl82wc"
+  "ref" : {
+    "file" : ["lambda/lambda-api-gateway/core-infra/terraform_output.json"],
+    "type" : "TERRAFORM"
   },
-  "lambda_exec_role_arn": {
-    "sensitive": false,
-    "type": "string",
-    "value": "arn:aws:iam::593793058131:role/TestLambdaExecutionRole"
-  },
-  "test_route_id": {
-    "sensitive": false,
-    "type": "string",
-    "value": "gw5yoy0"
-  }
+  "cloudwatch_log_group_region": "us-east-1",
+  "cluster_region": "us-east-1",
+  "cluster_account": "593793058131"
 }

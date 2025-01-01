@@ -1,0 +1,17 @@
+{
+  "api_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ntl05y1h7a"
+  },
+  "lambda_exec_role_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:iam::593793058131:role/TestLambdaExecutionRole"
+  },
+  "test_route_id": {
+    "sensitive": false,
+    "type": "string",
+    "value": "ynivcf7"
+  }
+}
