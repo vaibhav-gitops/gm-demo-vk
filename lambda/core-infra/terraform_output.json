@@ -28,5 +28,10 @@
     "sensitive": false,
     "type": "string",
     "value": "green_function.zip"
+  },
+  "target_group_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:elasticloadbalancing:us-east-1:593793058131:targetgroup/my-target-group/3cf9b1d03538dc46"
   }
 }
