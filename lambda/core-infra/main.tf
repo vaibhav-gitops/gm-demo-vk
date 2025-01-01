@@ -187,10 +187,9 @@ resource "aws_security_group" "elb_sg" {
 
 resource "aws_lb_target_group" "default" {
   name        = "my-target-group"
-  protocol    = "HTTP"
   port        = 80
   vpc_id      = local.vpc_id
-  target_type = "instance"
+  target_type = "lambda"
 
   tags = {
     Name = "my-target-group"
