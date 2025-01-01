@@ -1,5 +1,5 @@
 {
-  "FunctionName": "MyLambdaFunction",
+  "FunctionName": "LambdaFunction_APIGateway",
   "Role": "{{ lambda_exec_role_arn }}",
   "Handler": "test_lambda_function.lambda_handler",
   "Runtime": "python3.8",
