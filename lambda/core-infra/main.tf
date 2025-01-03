@@ -11,6 +11,7 @@ locals {
   lambda_role_name = "TestLambdaExecutionRole"
   blue_lambda_zip_file  = "blue_function.zip"
   green_lambda_zip_file  = "green_function.zip"
+  sqs_lambda_zip_file  = "green_function.zip"
   lambda_runtime   = "python3.8"
   tags = {
     Project = "GitMoxi"
@@ -80,7 +81,14 @@ resource "aws_s3_object" "green_lambda_zip" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = local.green_lambda_zip_file
   source = local.green_lambda_zip_file
-  etag   = filemd5(local.blue_lambda_zip_file)
+  etag   = filemd5(local.green_lambda_zip_file)
+}
+
+resource "aws_s3_object" "sqs_lambda_zip" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+  key    = local.sqs_lambda_zip_file
+  source = local.sqs_lambda_zip_file
+  etag   = filemd5(local.sqs_lambda_zip_file)
 }
 
 ################################################################################
@@ -222,6 +230,31 @@ resource "aws_lb_listener" "default" {
 }
 
 ################################################################################
+# SQS Queue
+################################################################################
+
+resource "aws_sqs_queue" "example_queue" {
+  name = "example-queue"
+}
+
+
+################################################################################
+# Send Initial Message to SQS
+################################################################################
+
+resource "null_resource" "send_message_to_sqs" {
+  provisioner "local-exec" {
+    command = <<EOT
+      aws sqs send-message \
+        --queue-url ${aws_sqs_queue.example_queue.url} \
+        --message-body "Hello from SQS!"
+    EOT
+  }
+
+  depends_on = [aws_sqs_queue.example_queue]
+}
+
+################################################################################
 # Outputs
 ################################################################################
 
@@ -251,4 +284,8 @@ output "s3_object_green_key" {
 
 output "target_group_arn" {
   value = aws_lb_target_group.default.arn
+}
+
+output "sqs_queue_arn" {
+  value = aws_sqs_queue.example_queue.arn
 }

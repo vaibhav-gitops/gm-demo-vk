@@ -29,6 +29,11 @@
     "type": "string",
     "value": "green_function.zip"
   },
+  "sqs_queue_arn": {
+    "sensitive": false,
+    "type": "string",
+    "value": "arn:aws:sqs:us-east-1:593793058131:example-queue"
+  },
   "target_group_arn": {
     "sensitive": false,
     "type": "string",
