@@ -1,7 +1,7 @@
 {
   "FunctionName": "LambdaFunction_SQS",
   "Role": "{{ lambda_exec_role_arn }}",
-  "Handler": "test_lambda_function.lambda_handler",
+  "Handler": "test_lambda_sqs.lambda_handler",
   "Runtime": "python3.8",
   "Code": {
     "S3Bucket": "{{ s3_bucket_name }}",
