@@ -1,8 +1,18 @@
 {
+  "api_endpoint_with_route": {
+    "sensitive": false,
+    "type": "string",
+    "value": "https://ntl05y1h7a.execute-api.us-east-1.amazonaws.com/test"
+  },
   "api_id": {
     "sensitive": false,
     "type": "string",
     "value": "ntl05y1h7a"
+  },
+  "elb_endpoint": {
+    "sensitive": false,
+    "type": "string",
+    "value": "my-application-load-balancer-1328171182.us-east-1.elb.amazonaws.com"
   },
   "lambda_exec_role_arn": {
     "sensitive": false,

@@ -1,10 +1,20 @@
 provider "aws" {
-  region = "us-east-1" # Replace with your desired region
+  region = "us-east-1" # Replace with your desired region and update the variable below
 }
 
 ################################################################################
 # Locals and Variables
 ################################################################################
+
+variable "region" {
+  type        = string
+  default     = "us-east-1"
+}
+
+variable "lambdaAlias" {
+  type        = string
+  default     = "PROD"
+}
 
 locals {
   api_name         = "example-api"
@@ -17,11 +27,6 @@ locals {
     Project = "GitMoxi"
     Owner   = "User"
   }
-}
-
-variable "lambdaAlias" {
-  type        = string
-  default     = "PROD"
 }
 
 ################################################################################
@@ -291,6 +296,10 @@ output "route_id" {
   value = aws_apigatewayv2_route.test_route.id
 }
 
+output "api_endpoint_with_route" {
+  value = "https://${aws_apigatewayv2_api.api.id}.execute-api.${var.region}.amazonaws.com/test"
+}
+
 output "lambda_exec_role_arn" {
   value = aws_iam_role.lambda_exec.arn
 }
@@ -313,4 +322,8 @@ output "target_group_arn" {
 
 output "sqs_queue_arn" {
   value = aws_sqs_queue.example_queue.arn
+}
+
+output "elb_endpoint" {
+  value = aws_lb.default.dns_name
 }
