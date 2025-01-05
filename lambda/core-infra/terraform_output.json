@@ -39,6 +39,11 @@
     "type": "string",
     "value": "green_function.zip"
   },
+  "s3_object_sqs_key": {
+    "sensitive": false,
+    "type": "string",
+    "value": "sqs_function.zip"
+  },
   "sqs_queue_arn": {
     "sensitive": false,
     "type": "string",
